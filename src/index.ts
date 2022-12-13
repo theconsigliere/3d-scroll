@@ -43,6 +43,13 @@ async function setupViewer() {
 
   await manager.addFromPath("./assets/rebusted.glb")
 
+  const texture = await viewer
+    .getManager()!
+    .importer!.importSinglePath(
+      "./assets/textures/marble_bust_01_mask_4k.png",
+      { generateMipmaps: false }
+    )
+
   viewer.getPlugin(TonemapPlugin)!.config!.clipBackground = true // in case its set to false in the glb
 
   viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false })

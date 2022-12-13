@@ -92712,7 +92712,7 @@ function setupViewer() {
       viewer.setDirty();
     }
 
-    var viewer, manager, camera, position, target, needsUpdate;
+    var viewer, manager, camera, position, target, texture, needsUpdate;
     return __generator(this, function (_c) {
       switch (_c.label) {
         case 0:
@@ -92789,6 +92789,14 @@ function setupViewer() {
         case 9:
           _c.sent();
 
+          return [4
+          /*yield*/
+          , viewer.getManager().importer.importSinglePath("./assets/textures/marble_bust_01_mask_4k.png", {
+            generateMipmaps: false
+          })];
+
+        case 10:
+          texture = _c.sent();
           viewer.getPlugin(webgi_1.TonemapPlugin).config.clipBackground = true; // in case its set to false in the glb
 
           viewer.scene.activeCamera.setCameraOptions({
@@ -92859,7 +92867,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55890" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62039" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
